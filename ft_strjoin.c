@@ -16,9 +16,10 @@ char *ft_strjoin(const char *s1, const char *s2)
     ft_strlcat(s3,s2, total_len + 1);
     return (s3) ;
 }
-
+/*
 int main()
 {
     char *s = ft_strjoin(NULL,"hhhhhhh");
     printf("%p\n",s);
 }
+*/
