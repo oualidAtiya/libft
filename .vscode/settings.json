@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "ft_strncmp.C": "cpp",
+        "numbers": "c",
+        "limits.h": "c",
+        "stddef.h": "c",
+        "libft.h": "c"
+    }
+}
