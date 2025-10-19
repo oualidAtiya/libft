@@ -12,6 +12,7 @@
         "limits.h": "c",
         "stddef.h": "c",
         "libft.h": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "math.h": "c"
     }
 }
