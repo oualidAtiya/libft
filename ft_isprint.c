@@ -1,15 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/20 13:32:47 by oatiya            #+#    #+#             */
+/*   Updated: 2025/10/20 14:18:10 by oatiya           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-/*
-static int ft_isascii(char c)
+
+int	ft_isprint(int c)
 {
-    if(c >= 0 && c <= 127)
-        return (1);
-    return (0);
-}
-*/
-int ft_isprint(char c)
-{
-    if (ft_isascii(c) && (c >= 32 && c <= 126))
-        return (1);
-    return (0);
+	if (ft_isascii(c) && (c >= 32 && c <= 126))
+		return (1);
+	return (0);
 }

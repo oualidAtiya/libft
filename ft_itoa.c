@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 11:54:41 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/19 12:02:21 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/20 13:51:56 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,17 @@ long	ft_intlen(long n)
 	return (len);
 }
 
+void	fill_str(char *str, long len, long num)
+{
+	str[len] = '\0';
+	while (len > 0)
+	{
+		str[len - 1] = (num % 10) + 48;
+		num = num / 10;
+		len--;
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -50,12 +61,9 @@ char	*ft_itoa(int n)
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	str[len] = '\0';
-	while (len-- > 0)
-	{
-		str[len - 1] = (num % 10) + 48;
-		num = num / 10;
-	}
+	fill_str(str, len, num);
+	if (num == 0)
+		str[0] = '0';
 	if (is_neg)
 		str[0] = '-';
 	return (str);

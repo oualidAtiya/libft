@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 14:09:05 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/20 14:09:06 by oatiya           ###   ########.fr       */
+/*   Created: 2025/10/20 13:54:56 by oatiya            #+#    #+#             */
+/*   Updated: 2025/10/20 14:14:04 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	return (c);
+	size_t			i;
+	unsigned char	*src_ptr;
+	unsigned char	*dest_ptr;
+
+	dest_ptr = (unsigned char *)dest;
+	src_ptr = (unsigned char *)src;
+	i = 0;
+	if (src > dest)
+	{
+		while (i < n)
+		{
+			dest_ptr[i] = src_ptr[i];
+			i++;
+		}
+	}
+	else if (dest > src)
+	{
+		while (n > 0)
+		{
+			dest_ptr[n - 1] = src_ptr[n - 1];
+			n--;
+		}
+	}
+	return (dest);
 }

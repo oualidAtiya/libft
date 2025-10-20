@@ -70,7 +70,7 @@ char **ft_split(const char *s, char c)
     array[j] = NULL ;
     return array ;
 }
-/*
+
 int main()
 {
     int i = 0;
@@ -81,4 +81,3 @@ int main()
         i++;
     }
 }
-*/
