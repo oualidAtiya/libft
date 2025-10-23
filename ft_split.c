@@ -1,83 +1,88 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/20 16:17:49 by oatiya            #+#    #+#             */
+/*   Updated: 2025/10/22 09:04:45 by oatiya           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
 #include "libft.h"
 
-int word_count(const char *str, char c)
+static int	count_word(const char *s, char c)
 {
-    int i ;
-    int count;
+	int	i;
+	int	count;
 
-    i = 0 ;
-    count = 0 ;
-    while (str[i])
-    {
-        while(str[i] && str[i] == c)
-            i++;
-        if(str[i])
-        {
-            count++;
-            while(str[i] && str[i] != c)
-                i++;
-        }
-    }
-    return count;
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+		{
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+	}
+	return (count);
 }
 
-void ft_free(char** array , int index)
+static int	word_len(char *str, int start, char c)
 {
-    while (index > 0)
-        free(array[--index]);
-    free(array);
+	int	len;
+
+	if (!str)
+		return (0);
+	len = 0;
+	while (str[start] && str[start] != c)
+	{
+		len++;
+		start++;
+	}
+	return (len);
 }
 
-char **ft_split(const char *s, char c)
+static void	ft_free(char **arr, int index)
 {
-    char **array ;
-    int i ;
-    int j ;
-    int k ;
-    int word_len ;
-
-    if(!s)
-        return NULL ;
-    array = ft_calloc(word_count(s,c) + 1 , sizeof(char *));
-    if (!array)
-        return NULL ;
-    j = 0 ;
-    i = 0 ;
-    while (s[i])
-    {
-        while(s[i] && s[i] == c)
-            i++;
-        if (s[i])
-        {
-            word_len = 0 ;
-            while (s[i] && s[i] != c)
-            {
-                word_len++;
-                i++;
-            }
-            i = i - word_len ;
-            array[j] = malloc(word_len + 1) ;
-            if (!array[j])
-                ft_free(array,j);
-            k = 0 ;
-            while(s[i] && s[i] != c)
-                array[j][k++] = s[i++] ;
-            array[j][k] = '\0';
-            j++;     
-        }
-    }
-    array[j] = NULL ;
-    return array ;
+	while (index >= 0)
+	{
+		free(arr[index]);
+		index--;
+	}
+	free(arr);
 }
 
-int main()
+char	**ft_split(const char *s, char c)
 {
-    int i = 0;
-    char **words = ft_split(",oualid,atiya,oualid,atiya,        oualid,", ',');
-    while (words[i])
-    {
-        printf("%s\n",words[i]);
-        i++;
-    }
+	int		i;
+	int		j;
+	char	**array;
+
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	array = malloc((count_word(str, c) + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i] && word_len((char *)str, i, c))
+		{
+			array[j++] = ft_substr(str, i, word_len((char *)str, i, c));
+			if (!array[j - 1])
+				return (ft_free(array, j - 1), NULL);
+			i += word_len((char *)str, i, c);
+		}
+	}
+	return (array[j] = NULL, array);
 }
