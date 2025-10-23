@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:10:41 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/22 15:42:05 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/23 10:00:35 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,6 @@ t_list  *ft_lstnew(void *content);
 int     ft_lstsize(t_list *lst);
 t_list *ft_lstlast(t_list *lst);
 void ft_lstadd_front(t_list **lst, t_list *new);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void*));
 #endif
