@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:17:49 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/22 09:04:45 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/25 16:52:57 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,23 +65,23 @@ char	**ft_split(const char *s, char c)
 	int		j;
 	char	**array;
 
-	if (!str)
+	if (!s)
 		return (NULL);
 	i = 0;
 	j = 0;
-	array = malloc((count_word(str, c) + 1) * sizeof(char *));
+	array = malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] && str[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		if (str[i] && word_len((char *)str, i, c))
+		if (s[i] && word_len((char *)s, i, c))
 		{
-			array[j++] = ft_substr(str, i, word_len((char *)str, i, c));
+			array[j++] = ft_substr(s, i, word_len((char *)s, i, c));
 			if (!array[j - 1])
 				return (ft_free(array, j - 1), NULL);
-			i += word_len((char *)str, i, c);
+			i += word_len((char *)s, i, c);
 		}
 	}
 	return (array[j] = NULL, array);
