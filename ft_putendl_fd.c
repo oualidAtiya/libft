@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:55:38 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/20 13:58:24 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/26 15:45:42 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s || fd < 0)
+		return ;
 	while (s[i])
 	{
 		write(fd, &s[i], 1);

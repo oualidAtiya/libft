@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:54:56 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/25 17:58:58 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/26 12:33:06 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,4 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	return (dest);
-}
-
-int main()
-{
-	char str[] =  "hello world" ;
-	printf("%s\n",(char*)memmove(str+2,str,4));
-	printf("%s\n",(char*)ft_memmove(str+2,str,4));
 }

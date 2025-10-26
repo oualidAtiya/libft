@@ -6,13 +6,13 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 11:54:41 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/25 17:08:00 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/26 10:49:57 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_intlen(long n)
+static long	ft_intlen(long n)
 {
 	long	len;
 
@@ -32,7 +32,7 @@ long	ft_intlen(long n)
 	return (len);
 }
 
-void	fill_str(char *str, long len, long num)
+static void	fill_str(char *str, long len, long num)
 {
 	str[len] = '\0';
 	while (len > 0)
@@ -67,5 +67,4 @@ char	*ft_itoa(int n)
 	if (is_neg)
 		str[0] = '-';
 	return (str);
-
 }

@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:29:51 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/25 17:17:32 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/26 15:42:05 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 	size_t			total;
 
-	if (count != 0 && size > (size_t)-1 / count )
+	if (count != 0 && size > (size_t)-1 / count)
 		return (NULL);
 	total = size * count;
 	tmp = malloc(total);

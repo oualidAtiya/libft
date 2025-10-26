@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:30:48 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/20 14:05:10 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/26 11:57:14 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*str;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	str = malloc(ft_strlen(s) + 1);
 	if (!str)

@@ -6,11 +6,10 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:17:49 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/25 16:52:57 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/26 12:37:33 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	count_word(const char *s, char c)
