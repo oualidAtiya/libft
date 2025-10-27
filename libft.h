@@ -6,18 +6,15 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:10:41 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/26 16:09:17 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/27 15:53:08 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <string.h>
-# include <limits.h>
 
 typedef struct s_list
 {
