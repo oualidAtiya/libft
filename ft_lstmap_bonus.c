@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 10:56:53 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/27 16:19:05 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/27 16:47:54 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(new_content);
 		if (!new_node)
 		{
+			del(new_content);
 			ft_lstclear(&head, del);
 			return (NULL);
 		}

@@ -6,11 +6,10 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:30:48 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/26 11:57:14 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/27 17:08:30 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))

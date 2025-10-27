@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:07:39 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/27 16:24:01 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/27 16:48:29 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if(!lst)
+	if (!lst)
 		return (NULL);
 	while (lst)
 	{
