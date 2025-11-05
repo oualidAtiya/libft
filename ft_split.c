@@ -6,7 +6,7 @@
 /*   By: oatiya <oatiya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:17:49 by oatiya            #+#    #+#             */
-/*   Updated: 2025/10/26 12:37:33 by oatiya           ###   ########.fr       */
+/*   Updated: 2025/10/28 15:22:39 by oatiya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(const char *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] && word_len((char *)s, i, c))
+		if (s[i])
 		{
 			array[j++] = ft_substr(s, i, word_len((char *)s, i, c));
 			if (!array[j - 1])
